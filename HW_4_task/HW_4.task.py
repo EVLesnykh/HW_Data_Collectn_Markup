@@ -41,16 +41,16 @@ def scrape_page_data(url):
     # Создание DataFrame
     df = pd.DataFrame(data_list)
 
-# Получение данных
-data_list = scrape_page_data(url)
+    # Получение данных
+    data_list = scrape_page_data(url)
 
-# Создание DataFrame
-df = pd.DataFrame(data_list)
+    # Создание DataFrame
+    df = pd.DataFrame(data_list)
 
-# Путь к файлу CSV
-csv_file_path = "HW_4_task_table.csv"
+    # Путь к файлу CSV
+    csv_file_path = "HW_4_task_table.csv"
 
-# Запись DataFrame в файл CSV
-df.to_csv(csv_file_path, index=False)
+    # Запись DataFrame в файл CSV
+    df.to_csv(csv_file_path, index=False)
 
-print("Данные записаны в файл под именем HW_4_task_table.csv")
+    print("Данные записаны в файл под именем HW_4_task_table.csv")
