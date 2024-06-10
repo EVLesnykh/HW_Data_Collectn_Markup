@@ -6,22 +6,22 @@ import pandas as pd  # библиотека для обработки и ана�
 url = 'https://finance.yahoo.com/trending-tickers/'
 
 # Функция для скрейпинга табличных данных одной страницы
-def scrape_page_data(url):
-    # Отправка HTTP GET запроса на целевой URL с пользовательским заголовком User-Agent
-    response = requests.get(url, headers={
+
+# Отправка HTTP GET запроса на целевой URL с пользовательским заголовком User-Agent
+response = requests.get(url, headers={
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'})
 
-    # Создаем объект дерева HTML из содержимого ответа
-    tree = html.fromstring(response.content)
+# Создаем объект дерева HTML из содержимого ответа
+tree = html.fromstring(response.content)
 
-    # Используем XPath для выбора всех строк таблицы с классом 'W(100%)'
-    table_rows = tree.xpath("//table[@class='W(100%)']/tbody/tr")
+# Используем XPath для выбора всех строк таблицы с классом 'W(100%)'
+table_rows = tree.xpath("//table[@class='W(100%)']/tbody/tr")
 
-    # Создаем пустой список для хранения данных
-    data_list = []
+# Создаем пустой список для хранения данных
+data_list = []
 
-    # Итерируемся по строкам таблицы и извлекаем необходимые данные
-    for row in table_rows:
+# Итерируемся по строкам таблицы и извлекаем необходимые данные
+for row in table_rows:
         columns = row.xpath(".//td/text()")
         data = {
             'Symbol': row.xpath(".//td[1]/a/text()")[0].strip(),  # Извлекаем и очищаем значение столбца 'Symbol'
@@ -35,22 +35,19 @@ def scrape_page_data(url):
         }
         data_list.append(data)
     
-    for i in data_list:
+for i in data_list:
         print(i)
 
-    # Создание DataFrame
-    df = pd.DataFrame(data_list)
+# Создание DataFrame
+df = pd.DataFrame(data_list)
 
-    # Получение данных
-    data_list = scrape_page_data(url)
+# Создание DataFrame
+df = pd.DataFrame(data_list)
 
-    # Создание DataFrame
-    df = pd.DataFrame(data_list)
+# Путь к файлу CSV
+csv_file_path = "HW_4_task_table.csv"
 
-    # Путь к файлу CSV
-    csv_file_path = "HW_4_task_table.csv"
+# Запись DataFrame в файл CSV
+df.to_csv(csv_file_path, index=False)
 
-    # Запись DataFrame в файл CSV
-    df.to_csv(csv_file_path, index=False)
-
-    print("Данные записаны в файл под именем HW_4_task_table.csv")
+print("Данные записаны в файл под именем HW_4_task_table.csv")
