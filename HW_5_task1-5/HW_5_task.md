@@ -7,5 +7,7 @@
 3. Определите метод парсинга для извлечения интересующих вас данных. Используйте селекторы XPath или CSS для навигации по HTML и извлечения данных. Возможно, потребуется извлечь данные с нескольких страниц или перейти по ссылкам на другие страницы.
 
 4. Сохраните извлеченные данные в структурированном формате. Вы можете использовать оператор yield для возврата данных из паука, которые Scrapy может записать в файл в выбранном вами формате (например, JSON или CSV).
-
+[finance_trending.csv](HW_Data_Collectn_Markup\HW_5_task1-5\trending_tickers_scrapy\finance_trending.csv)
+[finance_trending.json](HW_Data_Collectn_Markup\HW_5_task1-5\trending_tickers_scrapy\finance_trending.json)
 5. Конечным результатом работы должен быть код Scrapy Spider, а также пример выходных данных. Не забывайте соблюдать правила robots.txt и условия обслуживания веб-сайта, а также ответственно подходите к использованию веб-скрейпинга.
+[finance_spider.py](HW_Data_Collectn_Markup\HW_5_task1-5\trending_tickers_scrapy\trending_tickers_scrapy\spiders\finance_spider.py)
