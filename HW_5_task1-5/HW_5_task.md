@@ -10,4 +10,4 @@
 HW_5_task1-5/trending_tickers_scrapy/finance_trending.csv <br>
 HW_5_task1-5/trending_tickers_scrapy/finance_trending.json <br>
 5. Конечным результатом работы должен быть код Scrapy Spider, а также пример выходных данных. Не забывайте соблюдать правила robots.txt и условия обслуживания веб-сайта, а также ответственно подходите к использованию веб-скрейпинга.
-[finance_spider.py](HW_Data_Collectn_Markup\HW_5_task1-5\trending_tickers_scrapy\trending_tickers_scrapy\spiders\finance_spider.py)
+HW_5_task1-5/trending_tickers_scrapy/trending_tickers_scrapy/spiders/finance_spider.py
