@@ -72,7 +72,7 @@ ITEM_PIPELINES = {
 
 IMAGES_STORE = 'images' 
 FEED_FORMAT = 'csv'
-FEED_URI = 'output/images.csv'
+FEED_URI = 'images_all/images.csv'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
